@@ -8,6 +8,7 @@ console.log(__dirname)
 console.log(__filename)
 // creating our server using methods provided on the app itself
 const app = express()
+const port = process.env.PORT || 3000; // for heroku 
 
 // define paths for express config
 const publicDirectoryApp = path.join(__dirname , '../public')
@@ -88,6 +89,6 @@ app.get('*' , (req , res) => {
      msg : 'Page not found'})
 })
 
-app.listen(3000 , () => {
-    console.log(' server is up running on port 3000')
+app.listen(port , () => {
+    console.log(' server is up running on port '+port)
 })
